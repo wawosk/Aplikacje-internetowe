@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Zadań</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Załaduj plik CSS -->
+</head>
+<body>
+<h1>TODO LIST</h1>
+
+<!-- Wyszukiwarka -->
+<div class="search-container">
+    <input type="text" id="wyszukiwarka" placeholder="Szukaj zadania..." oninput="wyszukajZadania()">
+</div>
+
+<div id="kontener"></div>
+
+<!-- Formularz dodawania nowego wpisu -->
+<div id="formularz-dodawania">
+    <input type="text" id="tekst" placeholder="Dodaj nowe zadanie...">
+    <input type="date" id="data">
+    <button onclick="dodajAkapit()">Dodaj</button>
+</div>
+
+<script src="script.js"></script> <!-- Załaduj plik JavaScript -->
+</body>
+</html>

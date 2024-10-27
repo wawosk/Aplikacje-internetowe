@@ -1,0 +1,105 @@
+/* Styl ogólny */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Jasne tło */
+    color: #333; /* Ciemny kolor tekstu */
+    margin: 0;
+    padding: 20px;
+    background: #7cbdda;
+}
+
+/* Styl nagłówka */
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Zielony kolor nagłówka */
+    font-weight: bold;
+    font-style: italic;
+    font-family: Calibri;
+}
+
+/* Stylizacja kontenera */
+#kontener {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Stylizacja każdego akapitu */
+.akapit {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Białe tło dla zadań */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Dodanie efektu animacji */
+}
+
+.akapit:hover {
+    transform: scale(1.02); /* Lekka powiększenie po najechaniu */
+}
+
+/* Stylizacja przycisku usuwania */
+.usun-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #ff4c4c; /* Czerwony kolor */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.usun-button:hover {
+    background-color: #ff1a1a; /* Jaśniejszy czerwony przy najechaniu */
+}
+
+/* Stylizacja formularza */
+#formularz-dodawania {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 20px; /* Odstęp od góry */
+    background-color: #ffffff; /* Tło formularza */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#formularz-dodawania input[type="text"],
+#formularz-dodawania input[type="date"],
+#wyszukiwarka {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; /* Szerokość dla inputów */
+}
+
+/* Stylizacja przycisku dodawania */
+#formularz-dodawania button {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Zielony kolor */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#formularz-dodawania button:hover {
+    background-color: #45a049; /* Jaśniejszy zielony przy najechaniu */
+}
+
+/* Stylizacja podświetlenia wyszukiwanego tekstu */
+.highlight {
+    background-color: yellow;
+}
+
+/* Stylizacja kontenera wyszukiwarki */
+.search-container {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
