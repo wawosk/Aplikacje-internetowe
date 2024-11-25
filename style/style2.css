@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    color:blanchedalmond;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    grid-column: 1 / 3;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.content {
+    position: relative; /* Umożliwia pozycjonowanie nakładki w stosunku do kontenera */
+    grid-column: 1 / 3;
+    padding: 20px;
+    background-image: url('tlo1.jpg'); /* Ustaw obraz tła */
+    background-size: cover; /* Pokrywa cały obszar */
+    background-position: center; /* Centruje obraz */
+}
+
+.overlay {
+    position: absolute; /* Umożliwia nakładanie na inne elementy */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Jasna, półprzezroczysta nakładka */
+    z-index: 1; /* Upewnia się, że nakładka jest na wierzchu */
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dwie kolumny */
+    gap: 30px; /* Odstęp między poszczególnymi nagłówkami i obrazami */
+    position: relative; /* Umożliwia pozycjonowanie wewnętrznych elementów */
+    z-index: 2; /* Upewnia się, że tekst jest nad nakładką */
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wyrównanie do środka */
+    gap: 10px; /* Odstęp między obrazem a opisem */
+}
+
+.wide-item {
+    grid-column: span 2; /* Szerokość zajmująca obie kolumny */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%; /* Szerokość kontenera obrazka */
+}
+
+.image {
+    margin-top: 30px;
+    width: 90%; /* Zmniejszono szerokość obrazów do 90% kontenera */
+    height: auto; /* Utrzymanie proporcji obrazów */
+    margin: 0 auto; /* Wyśrodkowanie obrazów */
+    border: 5px dashed chartreuse; /* Przerywane obramowanie w kolorze chartreuse */
+    border-radius: 10px; /* Opcjonalnie, zaokrąglone rogi */
+    padding: 5px; /* Opcjonalne, przestrzeń między obrazem a obramowaniem */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    grid-column: 1 / 3;
+    background-color: #f2f2f2;
+    padding: 5px;
+    text-align: left; /* Wyrównanie do lewej */
+    border-top: 5px solid black;
+    color:rgb(236, 89, 27);
+    background-color: antiquewhite;
+}
+
+h2 {
+    padding-top: 40px;
+    padding-left: 15%;
+    text-align: center;
+    z-index: 4;
+    color:blueviolet;
+    font-size: 40px;
+}
+
+h1 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+    color:chartreuse;
+    display: inline-block; /* Umożliwia zastosowanie transformacji */
+    transform: rotate(-10deg); /* Obrót tekstu o -15 stopni */
+}
+
+ol {
+    padding-top: 50px;
+    padding-left: 20px; /* Dodaje wcięcie po lewej stronie */
+}
+
+li {
+    margin-bottom: 20px; /* Dodaje przestrzeń poniżej każdego elementu listy */
+    font-weight: bold;
+    font-size: 140%;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+p {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#tekst1 {
+    font-style: italic;
+    text-align: center;
+}
+
+#tekst2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-size: 180%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: chartreuse;
+    text-align: center;
+    margin-bottom: 20px; /* Dodaj odstęp poniżej nagłówka */
+    margin-top: 20px;
+    display: inline-block; /* Umożliwia zastosowanie transformacji */
+    transform: rotate(5deg); /* Obrót tekstu o -15 stopni */
+}
+
+
+span {
+    text-decoration: underline wavy;
+    color: rgb(60, 255, 0);
+}
+
+
+#lista2,#lista4 
+{
+    font-size: 110%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline-block; /* Umożliwia zastosowanie transformacji */
+    transform: skew(-10deg); /* Pochyla tekst w lewo o 10 stopni */
+}
+
+#lista1,#lista3
+{
+    display: inline-block; /* Umożliwia zastosowanie transformacji */
+    transform: skew(10deg); /* Pochyla tekst w lewo o 10 stopni */
+}
+
+/* Nowa klasa do stylizacji poziomej sekcji obrazków */
+.horizontal-section {
+    display: flex; /* Umożliwia ustawienie elementów w linii */
+    justify-content: space-between; /* Dzieli przestrzeń na równe części */
+    gap: 20px; /* Dodano odstęp między obrazami */
+}
+
+#obraz3
+{
+    max-height: 400px;
+
+}
+
+#naglowek2
+{
+    transform: rotate(-5deg); /* Obrót tekstu o -15 stopni */
+}
