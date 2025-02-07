@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", () => {
+    if (Notification.permission === "default") {
+        Notification.requestPermission().then(permission => {
+            console.log(`Notification permission: ${permission}`);
+        });
+    } else {
+        console.log(`Notification permission already set: ${Notification.permission}`);
+    }
+});
+
 const map = L.map('map').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -8,11 +18,6 @@ navigator.geolocation.getCurrentPosition(
     position => console.log("Geolocation permission granted."),
     error => console.log("Geolocation permission denied.")
 );
-Notification.requestPermission().then(result => {
-    if (result === 'granted') {
-        console.log("Notification permission granted.");
-    }
-});
 
 document.getElementById("mojalokalizacja").addEventListener("click", function() {
     navigator.geolocation.getCurrentPosition(position => {
@@ -126,23 +131,20 @@ function checkIfComplete() {
     });
 
     if (isComplete) {
-        // Pokazuje puzzle w pełni ułożone
-        pieces.forEach((piece, index) => {
-            piece.style.transition = 'all 0.5s ease-in-out'; // Dodajemy animację
-            piece.style.transform = 'scale(1)'; // Przesuwamy je do pełnej wielkości
-            piece.style.opacity = '1'; // Upewniamy się, że są widoczne
+        pieces.forEach((piece) => {
+            piece.style.transition = 'all 0.5s ease-in-out';
+            piece.style.transform = 'scale(1)';
+            piece.style.opacity = '1';
         });
 
-        // Opóźnienie na pokazanie powiadomienia
         setTimeout(() => {
             if (Notification.permission === "granted") {
                 new Notification("Puzzle complete!");
             } else {
                 alert("Puzzle complete!");
             }
-        }, 500); // Opóźnienie na czas animacji
+        }, 500);
     } else {
-        // Dodajemy komunikat do konsoli, że puzzle jeszcze nie zostały ułożone
         console.log("Puzzle not yet completed.");
     }
 }
