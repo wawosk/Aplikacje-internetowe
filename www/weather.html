@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogoda w Mieście</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 95vh;
+        }
+        h1 {
+            font-size: 1.8em;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            background: #4caf50;
+            color: white;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #weatherResult {
+            margin-top: 20px;
+        }
+        .weather-card, .forecast-card {
+            background: indianred;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+        .forecast-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .forecast-item {
+            background: indianred;
+            width: 18%;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .forecast-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .forecast-info {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Sprawdź pogodę</h1>
+    <div class="input-group">
+        <input type="text" id="cityInput" placeholder="Wpisz nazwę miasta">
+        <button onclick="fetchWeather()">Wyślij</button>
+    </div>
+    <!-- Wyniki wyświetlane są tutaj -->
+    <div id="weatherResult"></div>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>
